@@ -147,6 +147,7 @@ a.noCol:hover{
 .nav-links-wrapper li a#profile-manager-link:hover, .nav-links-wrapper li a#profile-manager-link.active{ border-color: #c25975; }
 .nav-links-wrapper li a#cost-manager-link:hover, .nav-links-wrapper li a#cost-manager-link.active{ border-color: #5cb860; }
 .nav-links-wrapper li a#task-manager-link:hover, .nav-links-wrapper li a#task-manager-link.active{ border-color: #53BBB4; }
+.nav-links-wrapper li a#photo-manager-link:hover, .nav-links-wrapper li a#photo-manager-link.active{ border-color: #FFBF00; }
 .nav-links-wrapper li a#settings-link:hover, .nav-links-wrapper li a#settings-link.active{ border-color: #607d8b; }
 
 /* PROFILE */
@@ -180,6 +181,12 @@ a.noCol:hover{
 
 #nav-tasks .nav-tasks-item:first-child {
     border-right: 1px solid #0b1116!important;
+}
+
+/* PHOTOS */
+
+#photos-module .background-color-primary {
+    background-color: #FFBF00;
 }
 
 

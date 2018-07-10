@@ -1,6 +1,6 @@
 <div class="nav-links-wrapper box-shad background-content bordered-content">
   <div class="banner-wrapper background-secondary bordered-content-bottom">
-    <div class="banner-text">
+    <div class="banner-text py-3 pl-4">
       Bienvenue !
     </div>
   </div>
@@ -23,12 +23,12 @@
         <span>To-Do</span>
       </a>
     </li>
-    <!-- <li>
-      <a class="nav-link" routerLinkActive="active"  routerLink="/photos">
+    <li>
+      <a id="photo-manager-link" [className]="ownColoc ? 'ownCol nav-link' : 'noCol nav-link'" class="nav-link" routerLinkActive="active"  routerLink="/photos">
         <i class="material-icons float-left">collections</i>
         <span>Photos</span>
       </a>
-    </li> -->
+    </li>
     <li>
       <a id="settings-link" class="nav-link" routerLinkActive="active"  routerLink="/settings">
         <i class="material-icons float-left">settings</i>

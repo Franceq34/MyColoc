@@ -1,14 +1,8 @@
 .album-container{
-  color : #576366;
   border: 2px solid #ebebeb;
-  background-color: white;
   border-radius: 5px;
   text-align: center;
   padding: 5px;
-}
-
-.new-album{
-  color: #384047;
 }
 
 .photo-manager-container{
@@ -20,7 +14,6 @@
 
 .banner-wrapper{
     border-radius: 5px 5px 0px 0px;
-    background-color: #80438E;
     border-radius: 3px 3px 0px 0px;
 }
 
