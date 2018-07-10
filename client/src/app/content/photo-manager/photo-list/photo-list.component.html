@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-12 mb-3">
+    <div class="new-photo">
+      <i class="material-icons">
+      add_photo_alternate
+      </i>
+      Ajouter une photo
+    </div>
+
+    
+
+  </div>
+  <div
+    class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3"
+    *ngFor="let photo of photos">
+    <div
+      class="photo-container"
+      [ngStyle]="{'background': '#fff url(' + photo.adress + ') no-repeat'}"
+    >
+    <img
+        [src]="photo.adress"
+        class="box-shad-heavy"
+      >
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+.signin-container{
+    max-width: 400px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.banner-wrapper{
+    border-radius: 5px 5px 0px 0px;
+    background-color: #3079AB;
+    border-radius: 3px 3px 0px 0px;
+    /*border-bottom: 1px solid #d8d8d8;*/
+}
+
+.banner-text{
+  color : white;
+  padding: 15px 0px 10px 20px;
+}
+
+.material-icons{
+  display: inline-flex;
+  vertical-align: top;
+}
+
+.btn-send{
+    color : white;
+    background-color: #3079AB;
+}
+
+.error{
+    color : red;
+}

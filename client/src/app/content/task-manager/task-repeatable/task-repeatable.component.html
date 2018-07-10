@@ -1,0 +1,25 @@
+<form [formGroup]="choreForm" (ngSubmit)="createChore(); choreForm.reset()">
+  <div class="form-group">
+      <input id="input-add-chore" formControlName="nameChore" class="form-control" type="text" placeholder="Entrer une tâche"/>
+  </div>
+  <button [disabled]="choreForm.invalid" class="btn btn-add background-color-primary">
+    <i class="material-icons">
+      add
+    </i>
+  </button>
+</form>
+
+<div class="row justify-content-center">
+  <div class="col-12 col-lg-6" *ngFor="let chore of chores; let i = index">
+    <div class="card mt-4">
+      <div class="card-body text-center">
+        <h5 class="card-title">{{chore.nameChore}}</h5>
+        <p *ngIf="chore.dateLastAccomplished" class="card-text text-secondary"><span *ngIf="chore.nicknameLastUser" class="text-secondary">{{chore.nicknameLastUser}}</span><span *ngIf="!chore.nicknameLastUser" class="text-secondary">{{chore.firstnameLastUser}}</span> le {{chore.dateLastAccomplished | date: 'dd/MM/yyyy'}}</p>
+        <p *ngIf="!chore.dateLastAccomplished" class="card-text text-secondary">Jamais réalisée</p>
+        <p class="card-text text-secondary" *ngIf="chore.dateLastAccomplished">Il y a {{(chore.dateLastAccomplished | pastDays)}}</p>
+        <a class="card-link pointer" (click)="checkChore(chore.idChore)">Cocher</a>
+        <a class="card-link pointer color-primary" routerLink="{{chore.idChore}}">Voir plus</a>
+      </div>
+    </div>
+  </div>
+</div>

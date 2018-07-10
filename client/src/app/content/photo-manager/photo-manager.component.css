@@ -1,0 +1,35 @@
+.album-container{
+  color : #576366;
+  border: 2px solid #ebebeb;
+  background-color: white;
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px;
+}
+
+.new-album{
+  color: #384047;
+}
+
+.photo-manager-container{
+  margin-top : 20px;
+  background: white;
+  border-radius: 5px;
+
+}
+
+.banner-wrapper{
+    border-radius: 5px 5px 0px 0px;
+    background-color: #80438E;
+    border-radius: 3px 3px 0px 0px;
+}
+
+.banner-text{
+  color : white;
+  padding: 15px 0px 10px 20px;
+}
+
+.material-icons{
+  display: inline-flex;
+  vertical-align: top;
+}

@@ -1,0 +1,25 @@
+<div class="row justify-content-center mt-3">
+  <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+      <div class="card">
+        <div class="card-header background-color-primary text-center strong">
+            Créer une colocation
+        </div>
+        <div class="card-body">
+          Créer ou rejoindre ?
+          <div class="lighter small-text">
+            Vous n'êtes pas dans une colocation. Attendez une invitation ou créez votre colocation si vous êtes le premier à rejoindre l'application.
+          </div>
+          <form [formGroup]="colocForm" class="mt-3" (ngSubmit)="createColoc(); colocForm.reset()">
+            <div class="form-group">
+                <input id="input-add-coloc" formControlName="nameColoc" class="form-control" type="text" placeholder="Ma coloc"/>
+            </div>
+            <button [disabled]="colocForm.invalid" class="btn btn-add background-color-primary">
+              <i class="material-icons">
+                add
+              </i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

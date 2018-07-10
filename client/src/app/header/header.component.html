@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-md navbar-dark box-shad">
+  <div class="container">
+    <a class="navbar-brand" routerLink="">
+        <i class="material-icons">
+          people
+        </i>
+      <span>MyColoc</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarResponsive" aria-controls="navBarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navBarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li *ngIf="jwtToken.isAuthenticated" class="d-md-none">
+          <a class="nav-link" routerLinkActive="active" routerLink="/profile">Profil</a>
+        </li>
+        <li *ngIf="jwtToken.isAuthenticated" class="d-md-none">
+          <a class="nav-link" routerLinkActive="active" routerLink="/costs">Dépenses</a>
+        </li>
+        <li *ngIf="jwtToken.isAuthenticated" class="d-md-none">
+          <a class="nav-link" routerLinkActive="active" routerLink="/tasks">To-Do</a>
+        </li>
+        <li *ngIf="jwtToken.isAuthenticated" class="d-md-none">
+          <a class="nav-link" routerLinkActive="active" routerLink="/settings">Options</a>
+        </li>
+        <li *ngIf="!jwtToken.isAuthenticated" class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/auth/signup">Inscription</a>
+        </li>
+        <li *ngIf="!jwtToken.isAuthenticated" class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/auth/signin">Connexion</a>
+        </li>
+        <li *ngIf="jwtToken.isAuthenticated" class="nav-item">
+          <a class="nav-link pointer" (click)="logout()">Déconnexion</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

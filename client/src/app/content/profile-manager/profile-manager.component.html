@@ -1,0 +1,78 @@
+<div [@content]="currentState" id="profile-manager-module" class="profile-manager-wrapper background-content box-shad mb-4 bordered-content">
+  <div class="banner-wrapper background-color-primary bordered-content-bottom">
+    <div class="banner-text">
+      <i class="material-icons">
+        account_circle
+      </i>
+    </div>
+  </div>
+  <div class="p-3">
+
+    <div *ngIf="(hasInvitation && !currentColoc)" class="alert alert-success">
+      <div class="strong">Nouvelle invitation !</div>
+      <div *ngFor="let invitation of currentInvitations" class="clear-float">
+          <span>{{invitation.firstnameInviter}} {{invitation.lastnameInviter}} vous invite à rejoindre sa colocation.</span>
+          <span class="float-right">
+              <i class="material-icons pointer" title="Accepter" (click)="acceptInvitation(invitation)">
+                check
+              </i>
+              <i class="material-icons ml-2 pointer" title="Décliner" (click)="declineInvitation(invitation)">
+                close
+              </i>
+          </span>
+      </div>
+    </div>
+
+    <div *ngIf="currentUser" class="row justify-content-center">
+      <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+          <div class="card">
+            <div class="card-header text-center strong">
+              Vos informations
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item text-center">{{currentUser.firstnameUser}}  {{currentUser.lastnameUser}}</li>
+              <li *ngIf="currentUser.nicknameUser" class="list-group-item text-center">{{currentUser.nicknameUser}}</li>
+              <li class="list-group-item text-center">{{currentUser.emailUser}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="currentColoc" class="row justify-content-center mt-3">
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+              <div class="card">
+                <div class="card-header text-center strong">
+                  <span *ngIf="currentColoc.nameColoc">
+                    {{currentColoc.nameColoc}}
+                  </span>
+                  <span *ngIf="!currentColoc.nameColoc">
+                      Ma coloc
+                    </span>
+                  <span class="float-right">
+                      <span class="dropup ml-3">
+                          <span class="pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                            <i class="material-icons">
+                              settings
+                            </i>
+                          </span>
+                          <span class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item pointer" data-toggle="modal" data-target="#addMemberModal">Ajouter des membres</a>
+                            <a class="dropdown-item pointer" data-toggle="modal" data-target="#leaveColocModal">Quitter cette colocation</a>
+                          </span>
+                        </span>
+                  </span>
+                </div>
+                <ul *ngIf="currentMembersColoc" class="list-group list-group-flush">
+                  <li *ngFor="let member of currentMembersColoc" class="list-group-item text-center">{{member.firstnameUser}} {{member.lastnameUser}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <app-add-member-modal></app-add-member-modal>
+          <app-leave-coloc-modal (leave)="leaveColoc()"></app-leave-coloc-modal>
+
+          <div *ngIf="!currentColoc">
+            <app-create-coloc (create)="loadColoc(); loadMembersColoc()"></app-create-coloc>
+          </div>
+  </div>
+</div>

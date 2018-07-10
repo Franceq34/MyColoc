@@ -1,0 +1,75 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+@font-face {
+font-family: "Rounded";
+src: url('./assets/fonts/GothamRounded-Book.otf'),
+  url('./assets/fonts/GothamRoundedBook_21018.ttf');
+}
+
+@font-face {
+font-family: "Rounded";
+font-weight: bold;
+src: url('./assets/fonts/GothamRounded-Bold.otf'),
+  url('./assets/fonts/GothamRoundedBold_21016.ttf');
+}
+
+@font-face {
+font-family: "Rounded";
+font-weight: 300;
+src: url('./assets/fonts/GothamRounded-Light.otf'),
+  url('./assets/fonts/GothamRoundedLight_21020.ttf');
+}
+
+* {
+  font-family : "Rounded";
+}
+
+body{
+  background: transparent;
+  min-width:320px;
+  width: auto !important;
+  width:320px;   
+}
+
+.lighter{
+  font-weight: lighter;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.noselect {
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.text-limit-responsive{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.text-red {
+  color: red;
+}
+
+.ng-invalid.ng-touched {
+  border-color: red!important;
+}
+
+.ng-invalid.ng-touched:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25)!important;
+}

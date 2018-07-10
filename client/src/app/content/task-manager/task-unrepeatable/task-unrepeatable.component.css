@@ -1,0 +1,35 @@
+.material-icons{
+    display: inline-flex;
+    vertical-align: top;
+}
+
+span.author{
+  font-style: italic;
+  font-weight: lighter;
+  white-space: nowrap;
+}
+
+form{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.form-group{
+  margin-bottom: 0;
+}
+
+.btn-add{
+  color: white;
+  border-radius: 0px 3px 3px 0px;
+}
+
+#input-add-task{
+  border-radius: 3px 0px 0px 3px;
+  flex:auto;
+}
+
+.container-amount {
+  flex: 0 0 auto;
+}

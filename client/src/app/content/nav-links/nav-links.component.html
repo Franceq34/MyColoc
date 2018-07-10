@@ -1,0 +1,39 @@
+<div class="nav-links-wrapper box-shad background-content bordered-content">
+  <div class="banner-wrapper background-secondary bordered-content-bottom">
+    <div class="banner-text">
+      Bienvenue !
+    </div>
+  </div>
+  <ul>
+    <li>
+      <a id="profile-manager-link" class="nav-link" routerLinkActive="active" routerLink="/profile">
+        <i class="material-icons float-left">account_circle</i>
+        <span>Profil</span>
+      </a>
+    </li>
+    <li>
+      <a id="cost-manager-link" [className]="ownColoc ? 'ownCol nav-link' : 'noCol nav-link'" class="" routerLinkActive="active" routerLink="/costs">
+        <i class="material-icons float-left">euro_symbol</i>
+        <span>Dépenses</span>
+      </a>
+    </li>
+    <li>
+      <a id="task-manager-link" [className]="ownColoc ? 'ownCol nav-link' : 'noCol nav-link'" class="nav-link" routerLinkActive="active"  routerLink="/tasks">
+        <i class="material-icons float-left">list_alt</i>
+        <span>To-Do</span>
+      </a>
+    </li>
+    <!-- <li>
+      <a class="nav-link" routerLinkActive="active"  routerLink="/photos">
+        <i class="material-icons float-left">collections</i>
+        <span>Photos</span>
+      </a>
+    </li> -->
+    <li>
+      <a id="settings-link" class="nav-link" routerLinkActive="active"  routerLink="/settings">
+        <i class="material-icons float-left">settings</i>
+        <span>Options</span>
+      </a>
+    </li>
+  </ul>
+</div>

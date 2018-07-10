@@ -1,0 +1,18 @@
+<div [@content]="currentState" id="settings-module" class="settings-wrapper background-content box-shad mb-4 bordered-content">
+  <div class="banner-wrapper background-color-primary bordered-content-bottom">
+    <div class="banner-text">
+      <i class="material-icons">
+        settings
+      </i>
+    </div>
+  </div>
+  <div class="pl-3 pr-3 pt-3">
+    <div class="mb-3">Informations du compte</div>
+    <app-settings-account></app-settings-account>
+  </div>
+  <hr>
+  <div class="pl-3 pr-3 pb-3">
+    <div class="mb-3">Interface</div>
+    <app-settings-interface></app-settings-interface>
+  </div>
+</div>

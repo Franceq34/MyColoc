@@ -1,0 +1,25 @@
+.material-icons{
+    display: inline-flex;
+    vertical-align: top;
+  }
+
+form{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.btn-add{
+  color: white;
+  border-radius: 0px 3px 3px 0px;
+}
+
+.form-group{
+  margin-bottom: 0;
+}
+
+#input-add-chore{
+  border-radius: 3px 0px 0px 3px;
+  flex:auto;
+}

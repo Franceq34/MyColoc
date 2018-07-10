@@ -1,0 +1,24 @@
+ <div [@content]="currentState" id="task-manager-module" class="task-manager-wrapper background-content box-shad mb-4 bordered-content">
+  <div class="banner-wrapper background-color-primary bordered-content-bottom">
+    <div class="banner-text">
+      <i class="material-icons">
+      list_alt
+      </i>
+    </div>
+  </div>
+  <nav id="nav-tasks" class="d-flex justify-content-around background-secondary noselect">
+    <div class="nav-tasks-item">
+        <a routerLinkActive="active" routerLink="unrepeatable">
+          Occasionelles
+        </a>
+    </div>
+    <div class="nav-tasks-item">
+        <a routerLinkActive="active" routerLink="repeatable">
+          Régulières
+        </a>
+    </div>
+  </nav>
+  <div class="px-3 py-4">
+    <router-outlet></router-outlet>
+  </div>
+</div>

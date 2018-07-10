@@ -1,0 +1,126 @@
+/* GLOBAL */
+
+html{
+    background: #edeff0;
+}
+
+hr {
+    border-top: 1px solid #d8d8d8;
+}
+
+.background-content{
+    background-color: white!important;
+}
+
+.background-secondary{
+    background-color: #f7f7f9!important;
+}
+
+.hover-bg-secondary:hover {
+    background: #f7f7f9!important;
+}
+
+.box-shad{
+    box-shadow: 0 2px 0 rgba(0,0,0,0.08);
+}
+
+.background-color-primary {
+    color: white;
+}
+
+.bordered-content {
+    border: 1px solid #d8d8d8!important;
+}
+
+.bordered-content-bottom {
+    border-bottom: 1px solid #d8d8d8!important;
+}
+
+input[type="checkbox"]:not(:checked) + label {
+    color: #5e6a6d;
+}
+
+.color-primary {
+    color: #212529;
+}
+
+.color-secondary {
+    color: #5e6a6d;
+}
+
+.spinner {
+    background-image: url("./spinner.svg"); 
+    -webkit-background-size: cover;
+    background-size: cover; 
+}
+
+/* NAVBAR */
+
+nav.navbar{
+    background-color : #3e474f;
+}
+
+/* NAV-LINKS */
+
+.noCol{
+    cursor: not-allowed;
+    color : #c4c4c4 !important;
+}
+
+a.noCol:hover{
+    border-left:5px solid transparent !important;
+}
+
+.nav-links-wrapper li a:hover{
+    border-left:5px solid #5fcf80;
+    transition: 0.5s ease;
+}
+
+.nav-links-wrapper li a.active{
+    border-left:5px solid;
+}
+
+.nav-links-wrapper li a#profile-manager-link:hover, .nav-links-wrapper li a#profile-manager-link.active{ border-color: #c25975; }
+.nav-links-wrapper li a#cost-manager-link:hover, .nav-links-wrapper li a#cost-manager-link.active{ border-color: #5cb860; }
+.nav-links-wrapper li a#task-manager-link:hover, .nav-links-wrapper li a#task-manager-link.active{ border-color: #53BBB4; }
+.nav-links-wrapper li a#settings-link:hover, .nav-links-wrapper li a#settings-link.active{ border-color: #607d8b; }
+
+/* PROFILE */
+
+#profile-manager-module .background-color-primary {
+    background-color: #c25975;
+}
+
+/* COST */
+
+#cost-manager-module .background-color-primary {
+    background-color: #5cb860;
+}
+
+/* TO-DO */
+
+#task-manager-module .background-color-primary {
+    background-color: #53BBB4;
+}
+
+#nav-tasks .nav-tasks-item a{
+    border-bottom: 1px solid #d8d8d8!important;
+    color: #748184;
+}
+
+#nav-tasks .nav-tasks-item a.active{
+    border-bottom: 0!important;
+    background-color: white;
+    color : #495057;
+}
+
+#nav-tasks .nav-tasks-item:first-child {
+    border-right: 1px solid #d8d8d8!important;
+}
+
+
+/* SETTINGS */
+
+#settings-module .background-color-primary {
+    background-color: #607d8b;
+}

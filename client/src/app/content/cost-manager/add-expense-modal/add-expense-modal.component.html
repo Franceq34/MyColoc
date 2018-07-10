@@ -1,0 +1,53 @@
+<div class="modal fade" id="addExpenseModal" tabindex="-1" role="dialog" aria-labelledby="addExpenseModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header background-color-primary">
+        <h5 class="modal-title">
+            <i class="material-icons">
+              add
+            </i>
+            <span class="ml-1">
+              Ajouter une dépense
+            </span>
+          </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form *ngIf="expenseForm" [formGroup]="expenseForm" (ngSubmit)="addExpense(); expenseForm.reset()">
+          <div class="form-group">
+            <label for="input-add-title">Intitulé</label>
+            <input id="input-add-title" formControlName="titleExpense" class="form-control" type="text" placeholder="Sans titre"/>
+          </div>
+          <div class="form-group">
+              <label for="input-add-expense">Montant <span class="text-red">*</span></label>
+              <input id="input-add-expense" formControlName="amountExpense" class="form-control" type="number" placeholder="0.00€"/>
+          </div>
+          <label for="input-add-author">Payé par <span class="text-red">*</span></label>
+          <div class="form-group">
+            <select class="form-control w-100" id="input-add-author" formControlName="authorExpense">
+              <option value="{{currentMembersColoc[i].idUser}}" *ngFor="let member of expenseForm.controls.membersConcerned.controls; let i = index">
+                {{currentMembersColoc[i].firstnameUser}} {{currentMembersColoc[i].lastnameUser}}
+              </option>
+            </select>
+          </div>
+          <label>Membres concernés <span class="text-red">*</span></label>
+          <ul class="list-group list-group-flush">
+              <li formArrayName="membersConcerned" *ngFor="let member of expenseForm.controls.membersConcerned.controls; let i = index" class="list-group-item">
+                <div class="form-check">
+                  <input class="form-check-input pointer" type="checkbox" value="" id="{{currentMembersColoc[i].idUser}}" [formControlName]="i">
+                  <label class="form-check-label pointer" for="{{currentMembersColoc[i].idUser}}">
+                      {{currentMembersColoc[i].firstnameUser}} {{currentMembersColoc[i].lastnameUser}}
+                  </label>
+                </div>
+              </li>
+            </ul>
+          <button [disabled]="expenseForm.invalid" class="btn background-color-primary d-block mt-3 mx-auto">
+            Ajouter
+          </button>
+        </form>
+        </div>
+    </div>
+  </div>
+</div>

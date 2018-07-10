@@ -1,0 +1,28 @@
+<div *ngIf="currentUser" class="mb-2">
+    Nom : {{currentUser.firstnameUser}} {{currentUser.lastnameUser}}
+    <i class="material-icons pointer ml-1" data-toggle="modal" data-target="#updateNameModal">
+      create
+    </i>
+</div>
+<app-update-name-modal [currentUser]=currentUser (updated)="loadUser()"></app-update-name-modal>
+<div *ngIf="currentUser" class="mb-2">
+  <span *ngIf="!currentUser.nicknameUser">Définir un surnom</span>
+  <span *ngIf="currentUser.nicknameUser">Surnom : {{currentUser.nicknameUser}}</span>
+    <i class="material-icons pointer ml-1" data-toggle="modal" data-target="#updateNicknameModal">
+      create
+    </i>
+</div>
+<app-update-nickname-modal [currentUser]=currentUser (updated)="loadUser()"></app-update-nickname-modal>
+<div *ngIf="currentUser" class="mb-2">
+    Mail : {{currentUser.emailUser}}
+    <i class="material-icons pointer ml-1" data-toggle="modal" data-target="#updateEmailModal">
+      create
+    </i>
+</div>
+<app-update-email-modal [currentUser]=currentUser (updated)="loadUser()"></app-update-email-modal>
+<div>
+    Modifier mon mot de passe
+    <i class="material-icons pointer ml-1">
+      create
+    </i>
+</div>

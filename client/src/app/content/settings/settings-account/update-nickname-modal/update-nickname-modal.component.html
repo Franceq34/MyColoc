@@ -1,0 +1,30 @@
+<div class="modal fade" id="updateNicknameModal" tabindex="-1" role="dialog" aria-labelledby="updateNicknameModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header background-color-primary">
+          <h5 class="modal-title">
+              <i class="material-icons">
+                create
+              </i>
+              <span class="ml-1">
+                Modifier votre surnom
+              </span>
+            </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" *ngIf="currentUser">
+          <form *ngIf="userNicknameForm" [formGroup]="userNicknameForm" (ngSubmit)="updateNicknameUser()">
+            <div class="form-group">
+              <label for="input-update-nickname">Surnom</label>
+              <input id="input-update-nickname" formControlName="nicknameUser" class="form-control" type="text" value="{{currentUser.nicknameUser}}"/>
+            </div>
+            <button [disabled]="userNicknameForm.invalid" class="btn background-color-primary d-block mt-3 mx-auto">
+              Modifier
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

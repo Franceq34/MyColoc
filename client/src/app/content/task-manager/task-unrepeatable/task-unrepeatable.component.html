@@ -1,0 +1,61 @@
+
+<div [hidden]="!showText" class="row justify-content-center mt-3 mb-5">
+  <div class="col-12 col-sm-8 col-md-6 text-justify">
+      Répartissez les tâches
+      <div class="lighter">
+        Ce module vous permet de tenir à jour une liste de tâches à accomplir. Chacun peut librement en ajouter, en cocher ou en retirer comme un bloc note.
+      </div>
+  </div>
+</div>
+
+<form [formGroup]="taskForm" (ngSubmit)="createTask(); taskForm.reset()">
+  <div class="form-group">
+      <input id="input-add-task" formControlName="nameTask" class="form-control" type="text" placeholder="Entrer une tâche"/>
+  </div>
+  <button [disabled]="taskForm.invalid" class="btn btn-add background-color-primary">
+    <i class="material-icons">
+      add
+    </i>
+  </button>
+</form>
+
+<ul class="list-group mt-3">
+  <li
+    class="list-group-item"
+    *ngFor="let task of (tasks| sortArchived); let i = index">
+    <div class="d-flex">
+      <div
+        class="pointer container-checkbox"
+        (click)="checkTask(i)"
+      >
+        <i class="material-icons" *ngIf="!task.isArchivedTask" >
+          check_box_outline_blank
+        </i>
+        <i class="material-icons" *ngIf="task.isArchivedTask">
+          check_box
+        </i>
+      </div>
+      <div
+        class="pointer text-limit-responsive ml-2"
+        (click)="checkTask(i)"
+      >
+        {{task.nameTask}}
+      </div>
+      <div class="ml-auto color-secondary">
+          <span *ngIf="task.isArchivedTask" class="author color-secondary d-none d-sm-block">
+              <span *ngIf="task.nicknameAuthorTask">{{task.nicknameAuthorTask}}</span><span *ngIf="!task.nicknameAuthorTask">task.firstnameAuthorTask</span> le {{task.dateTask | date: 'dd/MM/yyyy'}}
+          </span>
+      </div>
+      <div class="dropup ml-3">
+        <span class="pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+          <i class="material-icons">
+            more_vert
+          </i>
+        </span>
+        <span class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item pointer" (click)="deleteTask(task.idTask)">Supprimer</a>
+        </span>
+      </div>
+    </div>
+  </li>
+</ul>

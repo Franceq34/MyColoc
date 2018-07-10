@@ -1,0 +1,93 @@
+<div [@content]="currentState" id="cost-manager-module" class="cost-manager-wrapper background-content box-shad mb-4 bordered-content">
+  <div class="banner-wrapper background-color-primary bordered-content-bottom">
+    <div class="banner-text">
+      <i class="material-icons">
+        euro_symbol
+      </i>
+    </div>
+  </div>
+  <div class="p-3">
+    <!-- <div [hidden]="!showChart" class="chart-container">
+      <canvas id="doughnutCosts"></canvas>
+    </div> -->
+
+    <div [hidden]="!showChart" class="chart-container">
+        <canvas id="horizontalBalance"></canvas>
+      </div>
+
+    <div [hidden]="showChart" class="row justify-content-center mt-3 mb-5">
+      <div class="col-12 col-sm-8 col-md-6 text-justify">
+          Tenez à jour vos comptes
+          <div class="lighter">
+            Ce module vous permet de tenir vos comptes entre colocataires. Démarrez dès que vous le souhaitez en ajoutant une première dépense dans le champs ci dessous.
+          </div>
+      </div>
+    </div>
+
+    <button class="btn background-color-primary mt-5 mx-auto d-block" data-toggle="modal" data-target="#addExpenseModal">Nouvelle dépense</button>
+
+    <ul id="accordion" *ngIf="expenses && expenses.length>0" class="list-group mt-3 mb-3">
+      <li
+        class="list-group-item background-secondary"
+      >
+        Historique
+      </li>
+      <li
+        class="list-group-item pointer hover-bg-secondary"
+        *ngFor="let expense of (expenses); let indexExpense = index"
+        id="heading{{expense.idExpense}}"
+        (click)="expenseExpanded!=expense.idExpense ? expandExpense(expense.idExpense) : null"
+        data-toggle="collapse" attr.data-target="#collapse{{expense.idExpense}}" aria-expanded="false" attr.aria-controls="collapse{{expense.idExpense}}"
+      >
+        <div class="d-flex">
+          <div
+            class="container-amount"
+          >
+            {{expense.amountExpense | currency:'EUR' }}
+        </div>
+        <div 
+          *ngIf="expense.titleExpense"
+          class="lighter color-secondary text-limit-responsive container-title-expense"
+        >- {{expense.titleExpense}}</div>
+        <div 
+          *ngIf="!expense.titleExpense"
+          class="lighter color-secondary text-limit-responsive container-title-expense"
+        >- Sans titre</div>
+        <div class="author ml-auto color-secondary">
+          <span class="d-none d-lg-block"><span *ngIf="expense.nicknameUser">{{expense.nicknameUser}}</span><span *ngIf="!expense.nicknameUser">{{expense.firstnameUser}}</span> le {{expense.dateExpense | date: 'dd/MM/yyyy'}}</span>
+        </div>
+          <span class="dropup ml-3">
+            <span class="pointer float-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+              <i class="material-icons">
+                more_vert
+              </i>
+            </span>
+            <span class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item pointer" (click)="expenseExpanded!=expense.idExpense ? expandExpense(expense.idExpense) : null" data-toggle="collapse" attr.data-target="#collapse{{expense.idExpense}}" aria-expanded="false" attr.aria-controls="collapse{{expense.idExpense}}">Détails</a>
+                <a class="dropdown-item pointer" (click)="deleteExpense(expense.idExpense)">Supprimer</a>
+            </span>
+          </span>
+        </div>
+        <div id="collapse{{expense.idExpense}}" class="collapse mt-2" attr.aria-labelledby="heading{{expense.idExpense}}" data-parent="#accordion">
+          <div *ngIf="expense.idExpense == expenseOpening" class="spinner">
+            
+          </div>
+          <div *ngIf="currentExpense && currentExpense.idExpense == expense.idExpense">
+              <span class="d-block d-lg-none mx-2 mb-2 color-secondary">
+                Payé par {{expense.firstnameUser}} le {{expense.dateExpense | date: 'dd/MM/yyyy'}}
+              </span>
+              <ul>
+                <li *ngFor="let member of currentExpense.membersConcerned">
+                  {{member.firstnameUser}}
+                </li>
+              </ul>
+              <div class="mx-2 mt-2">
+                  <span class="color-secondary">La part de chacun est de </span>{{expensePortion | currency:'EUR'}}
+              </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <app-add-expense-modal (added)="loadExpenses()"></app-add-expense-modal>
+</div>

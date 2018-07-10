@@ -1,0 +1,56 @@
+.profile-manager-wrapper{
+    margin-top: 20px;
+    border-radius: 5px;
+} 
+  
+.banner-wrapper{
+    border-radius: 5px 5px 0px 0px;
+    border-radius: 3px 3px 0px 0px;
+}
+
+.banner-text{
+color : white;
+padding: 15px 0px 10px 20px;
+}
+
+.material-icons{
+    display: inline-flex;
+    vertical-align: top;
+}
+
+.clear-float{
+    overflow: hidden;
+}
+
+.color-temp{
+    color : #5cb860;
+}
+
+.btn-confirm{
+    color: white !important;
+}
+
+.modal-header{
+    color: white !important;
+}
+
+.modal-header span{
+    color: white !important;
+}
+
+.modal-content{
+    border: 0;
+}
+
+.small-text{
+    font-size : 14px;
+    color : #4b5258;
+}
+
+.success{
+    color : #5cb860;
+}
+
+.error{
+    color : red;
+}

@@ -1,0 +1,21 @@
+<div class="mb-3">
+    Choix du thème :
+</div>
+<div class="pointer" (click)="changeTheme('default')">
+  <i class="material-icons" *ngIf="theme!=='default'">
+    check_box_outline_blank
+  </i>
+  <i class="material-icons" *ngIf="theme=='default'">
+    check_box
+  </i>
+  Classique
+</div>
+<div class="pointer" (click)="changeTheme('night')">
+    <i class="material-icons" *ngIf="theme!=='night'">
+      check_box_outline_blank
+    </i>
+    <i class="material-icons" *ngIf="theme=='night'" >
+      check_box
+    </i>
+  Nuit
+</div>
